@@ -257,21 +257,21 @@ local theme = lush(function()
     TSInclude            { PreProc } , -- File or module inclusion keywords: `#include` in C, `use` or `extern crate` in Rust.
     TSKeyword            { Statement } , -- Keywords that don't fit into other categories.
     TSKeywordFunction    { Statement } , -- Keywords used to define a function: `function` in Lua, `def` and `lambda` in Python.
-    TSKeywordOperator    { Normal } , -- Unary and binary operators that are English words: `and`, `or` in Python; `sizeof` in C.
+    TSKeywordOperator    { fg = base.fg0 } , -- Unary and binary operators that are English words: `and`, `or` in Python; `sizeof` in C.
     TSKeywordReturn      { Statement } , -- Keywords like `return` and `yield`.
     TSLabel              { Statement } , -- GOTO labels: `label:` in C, and `::label::` in Lua.
     TSMethod             { Function } , -- Method calls and definitions.
     TSNamespace          { Identifier } , -- Identifiers referring to modules and namespaces.
     TSNone               { Normal } , -- No highlighting (sets all highlight arguments to `NONE`). this group is used to clear certain ranges, for example, string interpolations. Don't change the values of this highlight group.
     TSNumber             { Number } , -- Numeric literals that don't fit into other categories.
-    TSOperator           { Normal } , -- Binary or unary operators: `+`, and also `->` and `*` in C.
+    TSOperator           { fg = base.fg1 } , -- Binary or unary operators: `+`, and also `->` and `*` in C.
     TSParameter          { Identifier, gui = "bold" } , -- Parameters of a function.
     TSParameterReference { TSParameter } , -- References to parameters of a function.
     TSPreProc            { PreProc } , -- Preprocessor #if, #else, #endif, etc.
     TSProperty           { Identifier } , -- Same as `TSField`.
-    TSPunctDelimiter     { Normal } , -- Punctuation delimiters: Periods, commas, semicolons, etc.
-    TSPunctBracket       { Normal } , -- Brackets, braces, parentheses, etc.
-    TSPunctSpecial       { Normal } , -- Special punctuation that doesn't fit into the previous categories.
+    TSPunctDelimiter     { fg = base.fg1 } , -- Punctuation delimiters: Periods, commas, semicolons, etc.
+    TSPunctBracket       { fg = base.fg1 } , -- Brackets, braces, parentheses, etc.
+    TSPunctSpecial       { fg = base.fg1 } , -- Special punctuation that doesn't fit into the previous categories.
     TSRepeat             { Statement } , -- Keywords related to loops: `for`, `while`, etc.
     TSStorageClass       { Type } , -- Keywords that affect how a variable is stored: `static`, `comptime`, `extern`, etc.
     TSString             { String } , -- String literals.
