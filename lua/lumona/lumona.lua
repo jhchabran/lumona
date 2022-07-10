@@ -318,6 +318,48 @@ local theme = lush(function()
     TelescopePromptPrefix { fg = base.accent1 },
     TelescopeSelection { bg = base.hl1, fg = base.bg1, gui = "bold" },
     TelescopeMatching { bg = base.hl0, fg = base.bg1 },
+
+    NvimTreeSymlink { Normal },
+    NvimTreeFolderName { Normal, gui = "bold" },
+    NvimTreeRootFolder { Comment },
+    -- NvimTreeFolderIcon
+    -- NvimTreeFileIcon
+    -- NvimTreeEmptyFolderName     (Directory)
+    NvimTreeOpenedFolderName { Normal, gui = "bold" },
+    -- NvimTreeExecFile
+    NvimTreeOpenedFile { fg = base.accent1 },
+    -- NvimTreeSpecialFile
+    -- NvimTreeImageFile
+
+    -- NvimTreeLspDiagnosticsError         (DiagnosticError)
+    -- NvimTreeLspDiagnosticsWarning       (DiagnosticWarn)
+    -- NvimTreeLspDiagnosticsInformation   (DiagnosticInfo)
+    -- NvimTreeLspDiagnosticsHint          (DiagnosticHint)
+
+    NvimTreeGitDirty { fg = colors.orange },
+    NvimTreeGitStaged { fg = colors.green }
+    -- NvimTreeGitMerge
+    -- NvimTreeGitRenamed
+    -- NvimTreeGitNew
+    -- NvimTreeGitDeleted
+    -- NvimTreeGitIgnored      (Comment)
+
+    -- NvimTreeWindowPicker
+
+    -- NvimTreeNormal
+    -- NvimTreeEndOfBuffer     (NonText)
+    -- NvimTreeCursorLine      (CursorLine)
+    -- NvimTreeVertSplit       (VertSplit)     [deprecated, use NvimTreeWinSeparator]
+    -- NvimTreeWinSeparator    (VertSplit)
+    -- NvimTreeCursorColumn    (CursorColumn)
+
+    -- NvimTreeFileDirty       (NvimTreeGitDirty)
+    -- NvimTreeFileStaged      (NvimTreeGitStaged)
+    -- NvimTreeFileMerge       (NvimTreeGitMerge)
+    -- NvimTreeFileRenamed     (NvimTreeGitRenamed)
+    -- NvimTreeFileNew         (NvimTreeGitNew)
+    -- NvimTreeFileDeleted     (NvimTreeGitDeleted)
+    -- NvimTreeFileIgnored     (NvimTreeGitIgnored)
   }
 end)
 
