@@ -52,8 +52,8 @@ local base = {
   fg1    = hsluv "#C2C2C2",
   fade0  = hsluv "#586e75",
   fade1  = hsluv "#93a1a1",
-  accent0= hsluv "#c1e3e0",
-  accent1= hsluv "#b0d1e8",
+  accent0= hsluv "#b58900",
+  accent1= hsluv "#cb4b16",
   hl0    = hsluv "#d33682",
   hl1    = hsluv "#859900",
 }
@@ -151,7 +151,7 @@ local theme = lush(function()
     --
     -- Uncomment and edit if you want more specific syntax highlighting.
 
-    Comment        { fg = base.fade0 }, -- Any comment
+    Comment        { fg = base.fade1 }, -- Any comment
 
     Constant       { fg = base.accent1 }, -- (*) Any constant
     String         { fg = base.accent0 }, --   A string constant: "this is a string"
@@ -304,8 +304,10 @@ local theme = lush(function()
 
     -- Fugitive syntax groups
     gitcommitDiscardedFile { fg = colors.red },
-    gitcommitUntrackedFile { fg = colors.yellow },
     gitcommitSelectedFile  { fg = colors.green },
+
+    diffAdded { fg = colors.green },
+    diffRemoved { fg = colors.red },
 
     -- GitSigns
     GitSignsAdd { fg = colors.green },
