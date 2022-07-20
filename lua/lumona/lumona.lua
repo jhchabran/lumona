@@ -53,7 +53,7 @@ local base = {
   fade0  = hsluv "#586e75",
   fade1  = hsluv "#93a1a1",
   accent0= hsluv "#b58900",
-  accent1= hsluv "#cb4b16",
+  accent1= hsluv '#cb4b16',
   hl0    = hsluv "#d33682",
   hl1    = hsluv "#859900",
 }
@@ -153,14 +153,14 @@ local theme = lush(function()
 
     Comment        { fg = base.fade1 }, -- Any comment
 
-    Constant       { fg = base.accent1 }, -- (*) Any constant
-    String         { fg = base.accent0 }, --   A string constant: "this is a string"
+    Constant       { fg = base.accent1.li(50), }, -- (*) Any constant
+    String         { fg = base.fg1.mix(colors.blue, 50) }, --   A string constant: "this is a string"
     Character      { String }, --   A character constant: 'c', '\n'
-    Number         { fg = base.accent1 }, --   A number constant: 234, 0xff
+    Number         { fg = base.accent1.li(50) }, --   A number constant: 234, 0xff
     Boolean        { Number }, --   A boolean constant: TRUE, false
     Float          { Number }, --   A floating point constant: 2.3e10
 
-    Identifier     { fg = base.fg1.mix(base.accent0, 50) }, -- (*) Any variable name
+    Identifier     { fg = base.fg1.mix(colors.cyan, 50) }, -- (*) Any variable name
     Function       { fg = base.fg0 }, --   Function name (also: methods for classes)
 
     Statement      { fg = base.fg1, gui = "italic" }, -- (*) Any statement
@@ -287,7 +287,7 @@ local theme = lush(function()
     TSEmphasis           { TSText, gui = "italic" } , -- Text to be represented with emphasis.
     TSUnderline          { TSText, gui = "underline" } , -- Text to be represented with an underline.
     TSStrike             { TSText, gui = "strikethrough" } , -- Strikethrough text.
-    TSTitle              { TSText, gui = "reverse" } , -- Text that is part of a title.
+    TSTitle              { TSText, fg = base.accent0 } , -- Text that is part of a title.
     TSLiteral            { Normal } , -- Literal or verbatim text.
     TSURI                { Underlined } , -- URIs like hyperlinks or email addresses.
     TSMath               { Special } , -- Math environments like LaTeX's `$ ... $`
