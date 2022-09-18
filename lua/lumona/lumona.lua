@@ -43,32 +43,10 @@
 --  `:lua require('lush').ify()`
 
 local lush = require('lush')
-local hsluv = lush.hsluv
+local palette = require('lumona.palette')
 
-local base = {
-  bg0    = hsluv "#002b36",
-  bg1    = hsluv "#073642",
-  fg0    = hsluv "#eee8d5",
-  fg1    = hsluv "#C2C2C2",
-  fade0  = hsluv "#586e75",
-  fade1  = hsluv "#93a1a1",
-  accent0= hsluv "#b58900",
-  accent1= hsluv '#cb4b16',
-  hl0    = hsluv "#d33682",
-  hl1    = hsluv "#859900",
-}
-
-local colors = {
-    white   = hsluv "#ffffff",
-    yellow  = hsluv "#b58900",
-    orange  = hsluv '#cb4b16',
-    red     = hsluv '#dc322f',
-    magenta = hsluv '#d33682',
-    violet  = hsluv '#6c71c4',
-    blue    = hsluv '#268bd2',
-    cyan    = hsluv '#2aa198',
-    green   = hsluv '#859900',
-}
+local base = palette.base
+local colors = palette.colors
 
 -- LSP/Linters mistakenly show `undefined global` errors in the spec, they may
 -- support an annotation like the following. Consult your server documentation.
@@ -245,9 +223,9 @@ local theme = lush(function()
     TSConstBuiltin       { Number } , -- Built-in constant values: `nil` in Lua.
     TSConstMacro         { Number } , -- Constants defined by macros: `NULL` in C.
     TSConstructor        { Normal } , -- Constructor calls and definitions: `{}` in Lua, and Java constructors.
-    TSDebug              { Normal, gui = "underdash" } , -- Debugging statements.
+    TSDebug              { Normal, gui = "underdashed" } , -- Debugging statements.
     TSDefine             { PreProc} , -- Preprocessor #define statements.
-    TSError              { gui = "underdot" } , -- Syntax/parser errors. This might highlight large sections of code while the user is typing still incomplete code, use a sensible highlight.
+    TSError              { gui = "underdotted" } , -- Syntax/parser errors. This might highlight large sections of code while the user is typing still incomplete code, use a sensible highlight.
     TSException          { Statement } , -- Exception related keywords: `try`, `except`, `finally` in Python.
     TSField              { Identifier } , -- Object and struct fields.
     TSFloat              { Number } , -- Floating-point number literals.
